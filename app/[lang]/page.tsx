@@ -3,6 +3,7 @@ import { addDays, format } from "date-fns";
 import { getLocale } from "../i18n";
 import React from "react";
 import { TZDate } from "@date-fns/tz";
+import Link from "next/link";
 
 const upcomingEvents = async () => {
   const returnEvents: {
@@ -265,9 +266,9 @@ const HomeDe = ({
         <dd>
           <ul>
             <li>
-              <a href="pm-mastodon.html">
+              <Link href="/pm-mastodon">
                 Pressemitteilung: Eröffnung osna.social
-              </a>
+              </Link>
             </li>
             <li>
               <a href="chaostalks.html">chaOStalks</a>
@@ -451,9 +452,9 @@ const HomeEn = ({
         <dd>
           <ul>
             <li>
-              <a href="pm-mastodon.html">
+              <Link href="/pm-mastodon">
                 Press release: Opening of osna.social (German)
-              </a>
+              </Link>
             </li>
             <li>
               <a href="chaostalks-en.html">chaOStalks</a>
