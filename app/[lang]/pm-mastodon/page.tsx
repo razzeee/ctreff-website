@@ -127,26 +127,3 @@ const PmMastodonDe = () => {
     </div>
   );
 };
-
-const PmMastodonEn = () => {
-  metadata.title = "Chaostreff Osnabrück e.V. - Legal Notice";
-  return (
-    <div className="prose dark:prose-invert">
-      <h1>Legal Notices</h1>
-
-      <h2>Diclaimer</h2>
-
-      <p>
-        This website contains links to third party websites (external links).
-        These websites are the responsibilities of the respective operators. The
-        content of the linked websites has been checked by us (the operator of
-        the current website) on their first linkage with respect to possible
-        statutory violation and we have not found any legal violation. We have
-        no influence on the content of the linked pages. We cannot permanently
-        control these externally linked pages with respect to statutory
-        violation without concrete hints. On awareness of statutory violation
-        these external links are removed immediately.
-      </p>
-    </div>
-  );
-};
