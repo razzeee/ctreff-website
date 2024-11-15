@@ -2,10 +2,11 @@ import ICAL from "ical.js";
 import { addDays, format } from "date-fns";
 import { getLocale } from "../i18n";
 import React from "react";
+import { TZDate } from "@date-fns/tz";
 
 const upcomingEvents = async () => {
   const returnEvents: {
-    startDate: Date;
+    startDate: TZDate;
     summary?: string;
     location?: string;
   }[] = [];
@@ -53,7 +54,10 @@ const upcomingEvents = async () => {
         returnEvents.push({
           summary: v.getFirstPropertyValue("summary")?.toString(),
           location: v.getFirstPropertyValue("location")?.toString(),
-          startDate: expand.last.toJSDate(),
+          startDate: new TZDate(
+            expand.last.toJSDate(),
+            expand.last.zone.toString()
+          ),
         });
       }
     }
@@ -66,7 +70,11 @@ const Events = ({
   events,
   lang,
 }: {
-  events: { startDate: Date; summary?: string; location?: string }[];
+  events: {
+    startDate: TZDate;
+    summary?: string;
+    location?: string;
+  }[];
   lang: string;
 }) => {
   if (!events.length) {
