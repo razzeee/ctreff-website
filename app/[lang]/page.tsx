@@ -271,10 +271,10 @@ const HomeDe = ({
               </Link>
             </li>
             <li>
-              <a href="chaostalks.html">chaOStalks</a>
+              <Link href="/chaostalks">chaOStalks</Link>
             </li>
             <li>
-              <a href="chaos-colloquia.html">Chaos Colloquia</a>
+              <Link href="/chaos-colloquia">Chaos Colloquia</Link>
             </li>
             {/* <!--
 		<li><a href="https://codingchaos.chaostreff-osnabrueck.de/">codingchaOS</a></li>
@@ -457,10 +457,10 @@ const HomeEn = ({
               </Link>
             </li>
             <li>
-              <a href="chaostalks-en.html">chaOStalks</a>
+              <Link href="/chaostalks">chaOStalks</Link>
             </li>
             <li>
-              <a href="chaos-colloquia-en.html">Chaos Colloquia</a>
+              <Link href="/chaos-colloquia">Chaos Colloquia</Link>
             </li>
             {/* <!--
 			<li><a href="https://codingchaos.chaostreff-osnabrueck.de">codingchaOS</a></li>
