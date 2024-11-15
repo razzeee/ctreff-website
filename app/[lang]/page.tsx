@@ -113,18 +113,29 @@ export default async function Home({
 
   const EventComponent = <Events events={events} lang={paramsAwaited.lang} />;
 
+  const lastChange = new TZDate(2024, 10, 5);
+
   if (awaitedParams.lang === "de") {
-    return <HomeDe events={EventComponent} />;
+    return <HomeDe events={EventComponent} lastChange={lastChange} />;
   } else {
-    return <HomeEn events={EventComponent} />;
+    return <HomeEn events={EventComponent} lastChange={lastChange} />;
   }
 }
 
-const HomeDe = ({ events }: { events: JSX.Element }) => {
+const HomeDe = ({
+  events,
+  lastChange,
+}: {
+  events: JSX.Element;
+  lastChange: TZDate;
+}) => {
   return (
     <div className="prose dark:prose-invert">
       <div className="text-center">
-        <em>Letzte Änderung: 2024-11-05</em>
+        <em>
+          Letzte Änderung:{" "}
+          {format(lastChange, "P", { locale: getLocale("de") })}
+        </em>
       </div>
 
       <p>
@@ -300,11 +311,19 @@ const HomeDe = ({ events }: { events: JSX.Element }) => {
   );
 };
 
-const HomeEn = ({ events }: { events: JSX.Element }) => {
+const HomeEn = ({
+  events,
+  lastChange,
+}: {
+  events: JSX.Element;
+  lastChange: TZDate;
+}) => {
   return (
     <div className="prose dark:prose-invert">
       <div className="text-center">
-        <em>Last amended: 2024-11-05</em>
+        <em>
+          Last amended: {format(lastChange, "P", { locale: getLocale("en") })}
+        </em>
       </div>
 
       <p>
